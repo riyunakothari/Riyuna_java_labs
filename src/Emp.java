@@ -1,48 +1,41 @@
-class Emp{
-        int empid;
-	String firstName;
-	String lastName;
-    	static int count = 0; 
-	int salary;
-	char grade;
-	int dojd;
-	int dojm;
-	int dojy;
-	
 
-public Emp(){
-        
-	firstName= "";
-	lastName= "";
-	salary= 0;
-	grade= ' ';
-	dojd=0;
-	dojm=0;
-	dojy=0;
-	 
 
+public class Emp{
+     private int empid;
+private	String firstName;
+private	String lastName; 
+private	int salary;
+private	char grade;
+static int count=0;
+public static int getCount() {
+	return count;
 }
-public Emp(String fn,String ln,int sal, char grd, int d,int m,int y ){
+
+private Date joiningDate;
+
+
+public Emp(String fn,String ln,int sal, char grd, Date joiningDate ){
+
 	this.firstName=fn;
 	this.lastName=ln;
 	this.salary=sal;
 	this.grade=grd;
-	this.dojd=d;
-	this.dojm=m;
-	this.dojy=y;
-        
+	this.joiningDate=joiningDate;
+    count++;
+empid = count;    
 
 }
 
 
+
 public void displayDetails(){
-	count++;
-	System.out.println("empid:" +count);
+
+	System.out.println("empid:" +Emp.count);
 	System.out.println("Firstname: "+firstName);
 	System.out.println("lastName: "+lastName);
 	System.out.println("salary: " +salary);
 	System.out.println("grade: "+grade);
-	System.out.println("doj:" +dojd+ "-" +dojm+ "-"+dojy);
+	System.out.println("Joining Date" + joiningDate);
  
 	
 }
